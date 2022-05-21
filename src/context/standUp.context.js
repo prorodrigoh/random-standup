@@ -11,13 +11,15 @@ export const SpeakerListContextProvider = ({ children }) => {
   const { Provider } = speakerListContext;
 
   const [input, setInput] = useState('');
-  const [speakerList, setSpeakerList] = useState(speakerNames);
-  const [currentSpeaker, setCurrentSpeaker] = useState(-1);
-
+  const [speakerList, setSpeakerList] = useState(speakerNames);         //array
+  const [currentSpeakerName, setCurrentSpeakerName] = useState('');     //name
+  const [currentSpeakerIndex, setCurrentSpeakerIndex] = useState(-1);   //counter
+  
   const value = {
     input, setInput,
     speakerList, setSpeakerList,
-    currentSpeaker, setCurrentSpeaker,
+    currentSpeakerIndex, setCurrentSpeakerIndex,
+    currentSpeakerName, setCurrentSpeakerName,
   };
   
   return <Provider value={value}>{children}</Provider>;

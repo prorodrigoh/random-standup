@@ -17,6 +17,6 @@ export const AddNewNameButton = () => {
   };
 
   return (
-      <Button onClick={onClick}>Add New Name</Button>
+      <Button onClick={onClick}>Add Speaker</Button>
   );
 };

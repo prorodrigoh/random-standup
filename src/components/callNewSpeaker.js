@@ -4,32 +4,36 @@ import { speakerListContext } from '../context/standUp.context';
 
 export const CallNewSpeakerButton = () => {
 
-    const { speakerList, setSpeakerList, currentSpeaker, setCurrentSpeaker } = useContext(speakerListContext);
+    const { speakerList, setSpeakerList, currentSpeakerName, setCurrentSpeakerName  } = useContext(speakerListContext);
     
-    const randomSpeaker = (arr) => {
-        const speakerIndex = randomIndex(arr.length)
-        setCurrentSpeaker(speakerIndex)
+    const onClick = () => {
+        const index = randomSpeaker(speakerList)
+        removeItem(index)
     }
 
+    const randomSpeaker = (arr) => {
+        const speakerIndex = randomIndex(arr.length)
+        setCurrentSpeakerName(arr[speakerIndex])
+        return speakerIndex
+    }
+    
     const randomIndex = (num) => {
         const newIndex = Math.floor(Math.random() * num)
         return newIndex
     }
 
-    const removeItem = (ind) => {
-        speakerList.splice(ind, 1)
-        setSpeakerList([...speakerList])
+    const removeItem = (speakerIndex) => {
+        if (speakerIndex > -1) {
+            const newList = speakerList.filter(speaker => speaker !== speakerList[speakerIndex] )
+            console.log(newList)
+            setSpeakerList(newList)
+        }
     }
-
-    const onClick = () => {
-        removeItem(currentSpeaker)
-        randomSpeaker(speakerList)
-    }
-
     return (
-        <Button onClick={onClick}>Call a speaker</Button>
+        (speakerList.length > 0)
+            ? <Button onClick={onClick}>Call a speaker</Button>
+            : <Button >Call a speaker</Button>
     )
-
 }
 
 

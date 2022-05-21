@@ -37,17 +37,21 @@ function App() {
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <SpeakerListContextProvider>
-          <section>
+          <div>
+          <section className='listToShow'>
             <StandupList />
           </section>
-          <section>
-            <AddNewNameInput />
+          </div><div>
+          <section className='input'>
+            <AddNewNameInput className='input-field'/>
             <AddNewNameButton />
           </section>
-          <section>
+          </div>
+          <section className='current-speaker'>
             <CurrentSpeaker />
             <CallNewSpeakerButton />
           </section>
+
         </SpeakerListContextProvider>
       </ThemeProvider>
     </div>
