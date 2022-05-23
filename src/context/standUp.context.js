@@ -4,9 +4,9 @@ export const speakerListContext = createContext({});
 
 export const SpeakerListContextProvider = ({ children }) => {
 
-  let speakerNames = ['KJ','Cholie','Maria','Rodrigo','Carlie','Cherrie','Aaran','Arthur',
+  let speakerNames = ['KJ','Chole','Maria','Rodrigo','Carlie','Cherie','Aner','Arthur',
   'Jenna','Lud','Hanna','Nerissa','Sebastian','Miguel','Josh','Todd',
-  'Brahm','Alex','Stephanie','Neil','Wade','Sebastian']
+  'Brahm','Alex','Stephanie','Neil','Wade','Sebas']
 
   const { Provider } = speakerListContext;
 
