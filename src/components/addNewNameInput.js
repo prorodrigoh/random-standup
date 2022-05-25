@@ -1,4 +1,4 @@
-import { Input, TextField } from '@mui/material';
+import { TextField } from '@mui/material';
 import { useContext } from 'react';
 import { speakerListContext  } from '../context/standUp.context';
 

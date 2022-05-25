@@ -4,7 +4,7 @@ import { speakerListContext } from '../context/standUp.context';
 
 export const CallNewSpeakerButton = () => {
 
-    const { speakerList, setSpeakerList, currentSpeakerName, setCurrentSpeakerName  } = useContext(speakerListContext);
+    const { speakerList, setSpeakerList, setCurrentSpeakerName  } = useContext(speakerListContext);
     
     const onClick = () => {
         const index = randomSpeaker(speakerList)
